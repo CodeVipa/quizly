@@ -4,13 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quizly</title>
+  <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
   <header>
-
+    <nav class="sticky top-0">
+      <div class="nav-container flex justify-between px-12 py-6">
+        <div class="logo rounded-md">
+          <h1 class="text-2xl font-extrabold">Quizly</h1>
+        </div>
+        <ul class="nav-links hidden md:flex gap-4">
+          <li class="hover:text-primary hover:underline py-2 px-4 "><a href="#">Home</a></li>
+          <li class="hover:text-primary hover:underline py-2 px-4 "><a href="">Quizzes</a></li>
+          <li class="hover:text-primary hover:underline py-2 px-4 "><a href="">About</a></li>
+          <li class="hover:text-primary hover:underline py-2 px-4 "><a href="">Contact</a></li>
+        </ul>
+        <div class="cta flex space-x-3">
+          <button class="px-4 py-2 rounded-md hover:bg-primary hover:cursor-pointer border-primary border-2 ">Get Started</button>
+          <button class="md:hidden">Menu</button>
+        </div>
+      </div>
+    </nav>
   </header>
   <main>
-
+    <section class="hero h-screen bg-amber-950"></section>
   </main>
   <footer>
     

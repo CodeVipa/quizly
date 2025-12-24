@@ -1,1 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
+
+
+@theme {
+  /* Fonts */
+  --font-sans: "Comfortaa", system-ui, sans-serif;
+
+  /* Light mode */
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-text: #0f172a;
+
+  /* Dark mode */
+  --color-bg-dark: #020617;
+  --color-surface-dark: #020617;
+  --color-text-dark: #e5e7eb;
+
+  /* Brand colors */
+  --color-primary: #00e5ff;      /* neon blue */
+  --color-secondary: #facc15;    /* golden yellow */
+
+  /* Accents */
+  --color-accent: #38bdf8;       /* soft cyan */
+  --color-accent-warm: #fde047;  /* warm highlight */
+
+  /* UI feedback */
+  --color-success: #22c55e;
+  --color-error: #ef4444;
+  --color-warning: #f59e0b;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  .dark body {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
+  }
+}
+
+
+@layer utilities {
+  .bg-surface {
+    background-color: var(--color-surface);
+  }
+
+  .dark .bg-surface {
+    background-color: var(--color-surface-dark);
+  }
+
+  .text-primary {
+    color: var(--color-primary);
+  }
+
+  .text-secondary {
+    color: var(--color-secondary);
+  }
+
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
+
+  .border-accent {
+    border-color: var(--color-accent);
+  }
+}
