@@ -1,36 +1,268 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="transition-colors duration-500">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quizly</title>
-  <link rel="stylesheet" href="./src/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quizly – Learn by Quizzing</title>
+  <link rel="stylesheet" href="./src/style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
-<body>
-  <header>
-    <nav class="sticky top-0">
-      <div class="nav-container flex justify-between px-12 py-6">
-        <div class="logo rounded-md">
-          <h1 class="text-2xl font-extrabold">Quizly</h1>
-        </div>
-        <ul class="nav-links hidden md:flex gap-4">
-          <li class="hover:text-primary hover:underline py-2 px-4 "><a href="#">Home</a></li>
-          <li class="hover:text-primary hover:underline py-2 px-4 "><a href="">Quizzes</a></li>
-          <li class="hover:text-primary hover:underline py-2 px-4 "><a href="">About</a></li>
-          <li class="hover:text-primary hover:underline py-2 px-4 "><a href="">Contact</a></li>
+<body class="relative bg-surface text-text dark:bg-surface-dark dark:text-text-dark">
+
+  <section class="relative min-h-screen flex flex-col">
+    <nav id="navbar" class="w-full fixed top-0 z-50 transition-all duration-300 bg-transparent backdrop-blur-0">
+      <div class="flex justify-between items-center px-8 md:px-14 py-6">
+        <h1 class="text-2xl font-extrabold tracking-tight text-primary drop-shadow-lg">Quizly</h1>
+
+        <ul class="hidden md:flex gap-2 text-sm font-medium">
+          <li><a href="#" class="px-4 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition drop-shadow">Home</a></li>
+          <li><a href="#about" class="px-4 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition drop-shadow">About</a></li>
+          <li><a href="#quizzes" class="px-4 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition drop-shadow">Quizzes</a></li>
+          <li><a href="#categories" class="px-4 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition drop-shadow">Categories</a></li>
+          <li><a href="#contact" class="px-4 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition drop-shadow">Contact</a></li>
+          <li><a href="#faqs" class="px-4 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition drop-shadow">FAQs</a></li>
         </ul>
-        <div class="cta flex space-x-3">
-          <button class="px-4 py-2 rounded-md hover:bg-primary hover:cursor-pointer border-primary border-2 ">Get Started</button>
-          <button class="md:hidden">Menu</button>
-        </div>
+
+    <div class="flex items-center gap-3">
+
+      <!-- Theme Toggle -->
+      <button
+        id="themeToggle"
+        aria-label="Toggle dark mode"
+        class="hidden md:inline-flex items-center justify-center
+              w-11 h-11 rounded-xl
+              bg-primary text-surface
+              hover:bg-primary/90 transition
+              shadow-lg shadow-primary/30"
+      >
+        <i class="fas fa-sun hidden dark:inline"></i>
+      </button>
+
+      <button
+        aria-label="Open menu"
+        class="md:hidden inline-flex items-center justify-center
+              w-11 h-11 rounded-xl
+              bg-surface/60 dark:bg-surface-dark/60
+              backdrop-blur border border-primary/20
+              hover:bg-primary/10 dark:hover:bg-primary/20
+              transition"
+      >
+        <i class="fas fa-bars text-primary"></i>
+      </button>
+
+    </div>
+
       </div>
     </nav>
-  </header>
-  <main>
-    <section class="hero h-screen bg-amber-950"></section>
-  </main>
-  <footer>
-    
-  </footer>  
+
+    <div class="relative flex-1 flex items-center justify-center overflow-hidden px-6">
+      <div class="relative z-10 max-w-4xl text-center">
+        <span class="inline-block mb-4 px-4 py-1.5 rounded-full bg-primary/10 dark:bg-primary/20 backdrop-blur text-sm font-medium text-primary">Learn faster. Retain more.</span>
+
+        <h2 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 min-h-20">
+          Learn through<br />
+          <span class="text-primary" id="typewriter" style="display:inline-block;"></span>
+        </h2>
+
+        <p class="text-lg text-text/90 dark:text-text-dark/90 max-w-2xl mx-auto mb-8">
+          Quizly helps you master knowledge using short, focused quizzes —
+          from general knowledge to finance, psychometric tests, and
+          <span class="italic">amategeko y’umuhanda</span> for Rwanda.
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="px-8 py-4 rounded-xl bg-primary font-semibold text-surface hover:bg-primary/90 dark:hover:bg-primary/80 transition shadow-xl shadow-primary/30">Start a Quiz</button>
+          <button class="px-8 py-4 rounded-xl border border-text/40 dark:border-text-dark/50 hover:bg-text/10 dark:hover:bg-text-dark/20 transition backdrop-blur">Browse Categories</button>
+        </div>
+
+        <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 text-sm">
+          <div class="bg-surface/5 dark:bg-surface-dark/20 backdrop-blur rounded-xl py-6 border border-primary/20 shadow-md">
+            <p class="text-3xl font-bold text-primary">500+</p>
+            <p class="mt-1 text-text/70 dark:text-text-dark/70">Questions</p>
+          </div>
+          <div class="bg-surface/5 dark:bg-surface-dark/20 backdrop-blur rounded-xl py-6 border border-primary/20 shadow-md">
+            <p class="text-3xl font-bold text-primary">4</p>
+            <p class="mt-1 text-text/70 dark:text-text-dark/70">Categories</p>
+          </div>
+          <div class="bg-surface/5 dark:bg-surface-dark/20 backdrop-blur rounded-xl py-6 border border-primary/20 shadow-md">
+            <p class="text-3xl font-bold text-primary">T/F</p>
+            <p class="mt-1 text-text/70 dark:text-text-dark/70">Quick Tests</p>
+          </div>
+          <div class="bg-surface/5 dark:bg-surface-dark/20 backdrop-blur rounded-xl py-6 border border-primary/20 shadow-md">
+            <p class="text-3xl font-bold text-primary">MCQ</p>
+            <p class="mt-1 text-text/70 dark:text-text-dark/70">Deep Learning</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faqs" class="py-20 px-8 md:px-14 bg-surface/50 dark:bg-surface-dark/50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-12">
+        Frequently Asked <span class="text-primary">Questions</span>
+      </h2>
+
+      <div class="space-y-4">
+        <details class="group bg-surface dark:bg-surface-dark rounded-xl shadow-lg overflow-hidden border border-primary/10">
+          <summary class="flex justify-between items-center px-6 py-5 cursor-pointer list-none font-semibold text-lg">
+            <span>What is Quizly?</span>
+            <i class="fas fa-chevron-down transition-transform group-open:rotate-180"></i>
+          </summary>
+          <div class="px-6 pb-6 text-text/80 dark:text-text-dark/80">
+            Quizly is an interactive learning platform that helps you master knowledge through short, focused quizzes in various categories including general knowledge, finance, psychometric tests, and Rwanda traffic laws (amategeko y’umuhanda).
+          </div>
+        </details>
+
+        <details class="group bg-surface dark:bg-surface-dark rounded-xl shadow-lg overflow-hidden border border-primary/10">
+          <summary class="flex justify-between items-center px-6 py-5 cursor-pointer list-none font-semibold text-lg">
+            <span>Is Quizly free to use?</span>
+            <i class="fas fa-chevron-down transition-transform group-open:rotate-180"></i>
+          </summary>
+          <div class="px-6 pb-6 text-text/80 dark:text-text-dark/80">
+            Yes! Quizly is completely free with no hidden charges.
+          </div>
+        </details>
+
+        <details class="group bg-surface dark:bg-surface-dark rounded-xl shadow-lg overflow-hidden border border-primary/10">
+          <summary class="flex justify-between items-center px-6 py-5 cursor-pointer list-none font-semibold text-lg">
+            <span>How often are new questions added?</span>
+            <i class="fas fa-chevron-down transition-transform group-open:rotate-180"></i>
+          </summary>
+          <div class="px-6 pb-6 text-text/80 dark:text-text-dark/80">
+            We regularly update our question bank. New questions are added weekly.
+          </div>
+        </details>
+
+        <details class="group bg-surface dark:bg-surface-dark rounded-xl shadow-lg overflow-hidden border border-primary/10">
+          <summary class="flex justify-between items-center px-6 py-5 cursor-pointer list-none font-semibold text-lg">
+            <span>Can I track my progress?</span>
+            <i class="fas fa-chevron-down transition-transform group-open:rotate-180"></i>
+          </summary>
+          <div class="px-6 pb-6 text-text/80 dark:text-text-dark/80">
+            Yes! Quizly saves your scores and shows improvement over time (coming soon).
+          </div>
+        </details>
+
+        <details class="group bg-surface dark:bg-surface-dark rounded-xl shadow-lg overflow-hidden border border-primary/10">
+          <summary class="flex justify-between items-center px-6 py-5 cursor-pointer list-none font-semibold text-lg">
+            <span>Do you have quizzes in Kinyarwanda?</span>
+            <i class="fas fa-chevron-down transition-transform group-open:rotate-180"></i>
+          </summary>
+          <div class="px-6 pb-6 text-text/80 dark:text-text-dark/80">
+            Currently, most quizzes are in English, but our Rwanda traffic laws section includes explanations in both English and Kinyarwanda where needed.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-surface dark:bg-surface-dark border-t border-primary/20 py-12 px-8 md:px-14">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div class="md:col-span-1">
+        <h3 class="text-2xl font-extrabold tracking-tight text-primary mb-4">Quizly</h3>
+        <p class="text-text/70 dark:text-text-dark/70 text-sm leading-relaxed">
+          Learn faster and retain more with bite-sized, focused quizzes designed for real mastery.
+        </p>
+        <div class="flex gap-4 mt-6">
+          <a href="#" class="text-primary hover:text-primary/80 text-xl"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-primary hover:text-primary/80 text-xl"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-primary hover:text-primary/80 text-xl"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-primary hover:text-primary/80 text-xl"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="#" class="text-text/70 dark:text-text-dark/70 hover:text-primary transition">Home</a></li>
+          <li><a href="#quizzes" class="text-text/70 dark:text-text-dark/70 hover:text-primary transition">Quizzes</a></li>
+          <li><a href="#categories" class="text-text/70 dark:text-text-dark/70 hover:text-primary transition">Categories</a></li>
+          <li><a href="#faqs" class="text-text/70 dark:text-text-dark/70 hover:text-primary transition">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-lg mb-4">Categories</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="#" class="text-text/70 dark:text-text-dark/70 hover:text-primary transition">General Knowledge</a></li>
+          <li><a href="#" class="text-text/70 dark:text-text-dark/70 hover:text-primary transition">Finance</a></li>
+          <li><a href="#" class="text-text/70 dark:text-text-dark/70 hover:text-primary transition">Psychometric Tests</a></li>
+          <li><a href="#" class="text-text/70 dark:text-text-dark/70 hover:text-primary transition">Amategeko y’umuhanda</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-lg mb-4">Stay Updated</h4>
+        <p class="text-text/70 dark:text-text-dark/70 text-sm mb-4">
+          Subscribe for new quiz updates and learning tips.
+        </p>
+        <form class="flex flex-col sm:flex-row gap-3">
+          <input type="email" placeholder="Your email" class="px-4 py-3 rounded-lg bg-surface/50 dark:bg-surface-dark/50 border border-primary/20 focus:outline-none focus:border-primary" />
+          <button type="submit" class="px-6 py-3 rounded-lg bg-primary text-surface font-semibold hover:bg-primary/90 transition">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-primary/10 text-center text-sm text-text/60 dark:text-text-dark/60">
+      © 2025 Quizly. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 10) {
+        navbar.classList.add("bg-surface/70", "dark:bg-surface-dark/70", "backdrop-blur-3xl", "border-b", "border-primary/20", "shadow-lg");
+        navbar.classList.remove("bg-transparent", "backdrop-blur-0");
+      } else {
+        navbar.classList.remove("bg-surface/70", "dark:bg-surface-dark/70", "backdrop-blur-xl", "border-b", "border-primary/20", "shadow-lg");
+        navbar.classList.add("bg-transparent", "backdrop-blur-0");
+      }
+    });
+
+    const words = ["Smart Quizzes","True / False Questions","Multiple Choice Learning","Finance & Psychometric Tests","Amategeko y’umuhanda"];
+    let wordIndex = 0, charIndex = 0, isDeleting = false;
+    const typeTarget = document.getElementById("typewriter");
+
+    function typeEffect(){
+      const current = words[wordIndex];
+      if(!isDeleting){
+        typeTarget.textContent = current.slice(0,charIndex++);
+        if(charIndex > current.length){
+          isDeleting = true;
+          setTimeout(typeEffect, 1200);
+          return;
+        }
+      } else {
+        typeTarget.textContent = current.slice(0,charIndex--);
+        if(charIndex < 0){
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          charIndex = 0;
+        }
+      }
+      setTimeout(typeEffect, isDeleting ? 80 : 200);
+    }
+    typeEffect();
+
+    const themeToggle = document.getElementById("themeToggle");
+    function setTheme(mode){
+      if(mode === "dark") document.documentElement.classList.add("dark");
+      else document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme",mode);
+    }
+    const savedTheme = localStorage.getItem("theme") || "light";
+    setTheme(savedTheme);
+    themeToggle.addEventListener("click", ()=>{
+      const current = document.documentElement.classList.contains("dark") ? "dark" : "light";
+      setTheme(current === "dark" ? "light" : "dark");
+    });
+  </script>
 </body>
 </html>

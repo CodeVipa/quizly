@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
-
 @theme {
   /* Fonts */
   --font-sans: "Comfortaa", system-ui, sans-serif;
@@ -9,20 +8,20 @@
   /* Light mode */
   --color-bg: #f8fafc;
   --color-surface: #ffffff;
-  --color-text: #0f172a;
+  --color-text: #020617;
 
   /* Dark mode */
   --color-bg-dark: #020617;
-  --color-surface-dark: #020617;
+  --color-surface-dark: #0b0f23;
   --color-text-dark: #e5e7eb;
 
   /* Brand colors */
-  --color-primary: #00e5ff;      /* neon blue */
-  --color-secondary: #facc15;    /* golden yellow */
+  --color-primary: #facc15;
+  --color-secondary: #facc15;
 
   /* Accents */
-  --color-accent: #38bdf8;       /* soft cyan */
-  --color-accent-warm: #fde047;  /* warm highlight */
+  --color-accent: #38bdf8;
+  --color-accent-warm: #fde047;
 
   /* UI feedback */
   --color-success: #22c55e;
@@ -43,33 +42,15 @@
   }
 }
 
-
 @layer utilities {
-  .bg-surface {
-    background-color: var(--color-surface);
-  }
+  .bg-surface { background-color: var(--color-surface); }
+  .dark .bg-surface { background-color: var(--color-surface-dark); }
 
-  .dark .bg-surface {
-    background-color: var(--color-surface-dark);
-  }
+  .text-primary { color: var(--color-primary); }
+  .text-secondary { color: var(--color-secondary); }
 
-  .text-primary {
-    color: var(--color-primary);
-  }
+  .bg-primary { background-color: var(--color-primary); }
+  .bg-secondary { background-color: var(--color-secondary); }
 
-  .text-secondary {
-    color: var(--color-secondary);
-  }
-
-  .bg-primary {
-    background-color: var(--color-primary);
-  }
-
-  .bg-secondary {
-    background-color: var(--color-secondary);
-  }
-
-  .border-accent {
-    border-color: var(--color-accent);
-  }
+  .border-accent { border-color: var(--color-accent); }
 }
