@@ -48,7 +48,6 @@
   .border-accent { border-color: var(--color-accent); }
 }
 
-<<<<<<< HEAD
 html{
   scroll-behavior: smooth;
 }
@@ -97,5 +96,21 @@ html{
 .testimonial-track:hover {
   animation-play-state: paused;
 }
-=======
->>>>>>> c6ed6da46fea133111b8e23e3959b6edfc9b6812
+
+.quiz-option {
+  @apply px-6 py-4 rounded-xl cursor-pointer
+         bg-surface dark:bg-surface-dark/60
+         border border-primary/20
+         hover:border-primary/50
+         hover:bg-primary/10
+         transition-all duration-300
+         font-medium;
+}
+
+.quiz-option.correct {
+  @apply bg-success/20 border-success text-success;
+}
+
+.quiz-option.wrong {
+  @apply bg-error/20 border-error text-error;
+}
