@@ -33,7 +33,7 @@ export function categoryFormatter(category){
     return category.split("-").join(" ");
 }
 
-export function launchFireworks(duration = 2500) {
+export function launchFireworks(duration = 5000) {
     const end = Date.now() + duration;
 
     (function frame() {
@@ -49,7 +49,6 @@ export function launchFireworks(duration = 2500) {
             spread: 55,
             origin: { x: 1 }
         });
-
         if (Date.now() < end) {
             requestAnimationFrame(frame);
         }
