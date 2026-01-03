@@ -141,12 +141,15 @@ if(username.length < 4){
     errorMsg.innerText ="username too short!";
     return
 }
-const userObj = {
+const UserData = {
     name:username,
-    isRegistered:true
+    loginTime:new Date().toISOString(),
+    isLoggedIn:true
 };
-localStorage.setItem("currentUser",JSON.stringify(userObj))
-showPopUp();
+localStorage.setItem("authenticatedUser",JSON.stringify(UserData))
+console.log("redirecting ...")
+window.location.href="/dashboard.html";
+
 
       }
      </script>
