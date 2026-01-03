@@ -244,7 +244,8 @@ function bindRetry() {
             category: quizSession.category,
             questions: quizSession.questions,
             count: quizSession.questions.length,
-            timeLimit: quizSession.timer.duration / 2
+            timeLimit: quizSession.timer.duration / 2,
+            liveFeedbackEnabled: quizSession.liveFeedbackEnabled
         };
 
         sessionStorage.setItem("quizRetry", JSON.stringify(retryPayload));
