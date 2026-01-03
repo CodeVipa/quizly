@@ -19,15 +19,15 @@
         <div id="loginForm" class="form-box Login">
             <h2 class="animation" style="--D:1">Login</h2>
 
-            <form action="#">
+            <form onsubmit="handleSubmit(event)">
                 <div class="input-box animation" style="--D:2">
-                    <input type="text" required>
+                    <input type="text" required id="username">
                     <label for="username">Username</label>
                     <i class="bx bxs-user"></i>
                 </div>
 
                 <div class="input-box animation" style="--D:3">
-                    <input type="password" required>
+                    <input type="password" required id="password">
                     <label for="password">Password</label>
                     <i class="bx bxs-lock-alt"></i>
                 </div>
@@ -35,7 +35,8 @@
                 <div class="input-box animation" style="--D:4">
                     <button class="btn" type="submit">Login</button>
                 </div>
-                <p class="form-error"></p>
+                <p class="form-error" id="error-msg" style="color: red;"></p>
+
                 <div class="regi-link animation" style="--D:5">
                     <p>
                       Don’t have an account?
@@ -43,6 +44,12 @@
                     </p>
                 </div>
             </form>
+            <div id="choice-modal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:white; padding:40px; border-radius:10px; box-shadow: 0 0 20px rgba(0,0,0,0.5); text-align:center; z-index:100;">
+    <h2>Registration Successful! 🎉</h2>
+    <p>Choose your next step:</p>
+    <button onclick="handleChoice('learn')" style="margin-right:10px;">Learn</button>
+    <button onclick="handleChoice('quiz')">Start Quiz</button>
+</div>
         </div>
 
         <!-- LOGIN INFO -->
@@ -82,7 +89,7 @@
                 </div>
 
                 <div class="input-box animation" style="--li:21; --S:5">
-                    <button class="btn" type="submit">Register</button>
+                    <button class="btn" type="submit" onclick="handlesubmit()">Register</button>
                 </div>
                 <p class="form-error"></p>
 
@@ -114,6 +121,10 @@
       const container = document.querySelector(".container");
       const LoginLink = document.querySelector('.SignInLink');
       const RegisterLink = document.querySelector('.SignUpLink');
+      const usernameInput = document.getElementById("username");
+      const passwordInput =document.getElementById("password");
+      const errorMsg = document.getElementById("error-msg");
+      const modal = document.getElementById("choice-modal");
 
       RegisterLink.addEventListener("click", () => {
           container.classList.add("active");
@@ -122,6 +133,22 @@
       LoginLink.addEventListener("click", () => {
           container.classList.remove("active");
       });
+      function handlesubmit(e){
+        e.preventDefault();
+        const username = usernameInput.value;
+        const password = passwordInput.value;
+if(username.length < 4){
+    errorMsg.innerText ="username too short!";
+    return
+}
+const userObj = {
+    name:username,
+    isRegistered:true
+};
+localStorage.setItem("currentUser",JSON.stringify(userObj))
+showPopUp();
+
+      }
      </script>
 
 </body>
