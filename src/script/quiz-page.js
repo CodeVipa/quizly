@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function handleRetry(retry) {
     sessionStorage.removeItem("quizRetry");
-
+    
     quizSession = createQuizSession({
         category: retry.category,
         questions: retry.questions
@@ -83,7 +83,9 @@ async function loadQuestions(category, count) {
     const cat = data.categories.find(c => c.id === category);
     if (!cat) throw new Error("Category not found");
 
-    return [...cat.questions]
+    const filtered = cat.questions.filter(q => q.hasImage !== true);
+
+    return [...filtered]
         .sort(() => Math.random() - 0.5)
         .slice(0, count);
 }

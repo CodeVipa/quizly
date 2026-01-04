@@ -93,7 +93,7 @@ options.forEach(option => {
       feedback.className = "text-success";
     } else {
       option.classList.add('wrong');
-      feedback.textContent = "Incorrect ❌";
+      feedback.textContent = "Incorrect";
       feedback.className = "text-error";
 
       options.forEach(o => {
