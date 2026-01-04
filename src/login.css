@@ -284,3 +284,72 @@ transition-delay: 1.2s ;
   color: #ff6b6b;
   min-height: 16px;
 }
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Use percentage instead of fixed px */
+        height: auto;
+        min-height: 500px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Hide the decorative side info on mobile to save space */
+    .info-content {
+        display: none;
+    }
+
+    /* Adjust the curved shapes for mobile */
+    .container .curved-shape {
+        width: 100%;
+        height: 100%;
+        transform: rotate(0) skewY(0);
+        top: 0;
+        z-index: -1;
+    }
+
+    /* Expand the form boxes to take full width */
+    .container .form-box {
+        width: 100%;
+        padding: 30px;
+        position: relative; /* Change from absolute to stack them */
+    }
+
+    /* Ensure the Register form behaves correctly when active */
+    .form-box.Register {
+        position: absolute; /* Keep absolute to slide over the login */
+        transform: translateX(100%);
+    }
+
+    .container.active .form-box.Login {
+        transform: translateX(-100%);
+        display: none; /* Hide login fully when register is active */
+    }
+
+    .container.active .form-box.Register {
+        transform: translateX(0);
+        position: relative;
+    }
+
+    .form-box h2 {
+        font-size: 26px;
+    }
+
+    /* Adjust modal for mobile */
+    #choice-modal {
+        width: 85%;
+        padding: 20px;
+    }
+}
+
+/* SMALL MOBILE DEVICES */
+@media (max-width: 480px) {
+    .container {
+        border: none;
+        box-shadow: none;
+    }
+    
+    .input-box {
+        margin-top: 20px;
+    }
+}
