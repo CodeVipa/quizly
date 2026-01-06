@@ -115,6 +115,10 @@ document.getElementById("quizSettingsForm").addEventListener("submit", async e =
     renderQuestion();
 });
 
+function optionsToUse(question){
+    return quizSession.category === "amategeko-yumuhanda" ? question.options : question.shuffledOptions
+}
+
 function renderQuestion() {
     if (!quizSession) return;
 
@@ -130,7 +134,7 @@ function renderQuestion() {
         }
     }
 
-    const optionsToRender = q.shuffledOptions;
+    const optionsToRender = optionsToUse(q);
 
     document.getElementById("currentIndex").textContent = quizSession.currentIndex + 1;
     document.getElementById("questionText").textContent = q.question;
