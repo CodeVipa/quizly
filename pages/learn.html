@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learning Platform</title>
+  <link rel="stylesheet" href="../src/learning.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2 class="logo">Quizly</h2>
+
+    <nav class="menu">
+      <button onclick="loadModule(0)">General Knowledge</button>
+      <button onclick="loadModule(1)">Technology & ICT</button>
+      <button onclick="loadModule(2)">Finance & Business</button>
+      <button onclick="loadModule(3)">Logical Reasoning</button>
+      <button onclick="loadModule(4)">Rwanda Knowledge</button>
+      <button onclick="loadModule(5)">Space & Planets</button>
+    </nav>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <!-- GO BACK -->
+    <button id="backBtn" onclick="goBack()">← Go Back</button>
+
+    <!-- TITLE -->
+    <h1 id="title">Choose a learning module</h1>
+
+    <!-- CARTOON INTRO (VISIBLE FIRST) -->
+    <div id="intro" class="intro">
+      <div class="cartoon">
+        <div class="planet-core"></div>
+        <div class="planet-ring"></div>
+        <span class="star s1"></span>
+        <span class="star s2"></span>
+        <span class="star s3"></span>
+      </div>
+      <p>Explore knowledge in a fun and interactive way</p>
+    </div>
+
+    <div class="topics" id="topics"></div>
+
+  </main>
+</div>
+
+<script src="../src/script/learning.js"></script>
+</body>
+</html>
