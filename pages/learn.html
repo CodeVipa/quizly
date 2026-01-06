@@ -1,50 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Learning Platform</title>
-  <link rel="stylesheet" href="../src/learning.css">
-</head>
-<body>
 
+  <link rel="stylesheet" href="../src/learning.css" />
+  <link rel="stylesheet" href="../src/learning-materials.css" />
+</head>
+
+<body>
 <div class="layout">
 
-  <!-- SIDEBAR -->
   <aside class="sidebar">
     <h2 class="logo">Quizly</h2>
 
     <nav class="menu">
-      <button onclick="loadModule(0)">General Knowledge</button>
-      <button onclick="loadModule(1)">Technology & ICT</button>
-      <button onclick="loadModule(2)">Finance & Business</button>
-      <button onclick="loadModule(3)">Logical Reasoning</button>
-      <button onclick="loadModule(4)">Rwanda Knowledge</button>
-      <button onclick="loadModule(5)">Space & Planets</button>
+      <button onclick="displayMaterials('general-knowledge')">General Knowledge</button>
+      <button onclick="displayMaterials('technology')">Technology & ICT</button>
+      <button onclick="displayMaterials('finance')">Finance & Business</button>
+      <button onclick="displayMaterials('psychometric')">Logical Reasoning</button>
+      <button onclick="displayMaterials('amategeko-yumuhanda')">Amategeko y'umuhanda</button>
+      <button onclick="displayMaterials('space-science')">Space Science</button>
     </nav>
   </aside>
 
-  <!-- CONTENT -->
   <main class="content">
 
-    <!-- GO BACK -->
-    <button id="backBtn" onclick="goBack()">← Go Back</button>
-
-    <!-- TITLE -->
+    <button id="backBtn" class="back-btn" onclick="goBack()">← Go Back</button>
     <h1 id="title">Choose a learning module</h1>
 
-    <!-- CARTOON INTRO (VISIBLE FIRST) -->
     <div id="intro" class="intro">
-      <div class="cartoon">
-        <div class="planet-core"></div>
-        <div class="planet-ring"></div>
-        <span class="star s1"></span>
-        <span class="star s2"></span>
-        <span class="star s3"></span>
-      </div>
       <p>Explore knowledge in a fun and interactive way</p>
     </div>
 
-    <div class="topics" id="topics"></div>
+    <div id="controls" class="controls hidden">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search questions..."
+        oninput="applyFilters()"
+      />
+
+      <select id="difficultyFilter" onchange="applyFilters()">
+        <option value="all">All difficulties</option>
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+
+      <button class="quiz-btn" onclick="goToQuiz()">
+        Go to Quiz
+      </button>
+    </div>
+    <div id="topics" class="topics"></div>
 
   </main>
 </div>

@@ -1,15 +1,9 @@
-/* =========================
-   RESET
-========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =========================
-   BODY
-========================= */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   background: radial-gradient(circle at top, #020617, #000000);
@@ -17,18 +11,10 @@ body {
   height: 100vh;
   overflow: hidden;
 }
-
-/* =========================
-   LAYOUT
-========================= */
 .layout {
   display: flex;
   height: 100%;
 }
-
-/* =========================
-   SIDEBAR
-========================= */
 .sidebar {
   width: 260px;
   background: #020617;
@@ -36,7 +22,6 @@ body {
   border-right: 1px solid #1e293b;
 }
 
-/* LOGO */
 .logo {
   color: #facc15;
   margin-bottom: 40px;
@@ -46,7 +31,6 @@ body {
   text-shadow: 0 0 10px rgba(250,204,21,0.6);
 }
 
-/* MENU BUTTONS */
 .menu button {
   width: 100%;
   padding: 12px;
@@ -65,21 +49,14 @@ body {
   box-shadow: 0 0 12px rgba(250,204,21,0.4);
 }
 
-/* =========================
-   CONTENT
-========================= */
 .content {
   flex: 1;
   padding: 40px;
   overflow-y: auto;
 }
 
-/* TITLE */
-.content h1 {
-  animation: titleSlide 0.6s ease forwards;
-}
 
-/* BACK BUTTON */
+
 #backBtn {
   display: none;
   margin-bottom: 20px;
@@ -92,10 +69,6 @@ body {
   box-shadow: 0 0 8px rgba(250,204,21,0.3);
   animation: backPulse 2.5s infinite;
 }
-
-/* =========================
-   INTRO + CARTOON
-========================= */
 .intro {
   text-align: center;
   margin-top: 80px;
@@ -108,7 +81,6 @@ body {
   color: #94a3b8;
 }
 
-/* CARTOON CONTAINER */
 .cartoon {
   position: relative;
   width: 160px;
@@ -117,7 +89,6 @@ body {
   animation: floatCartoon 4s ease-in-out infinite;
 }
 
-/* PLANET */
 .planet-core {
   width: 120px;
   height: 120px;
@@ -131,7 +102,6 @@ body {
     inset -10px -10px 0 rgba(0,0,0,0.1);
 }
 
-/* PLANET RING */
 .planet-ring {
   width: 160px;
   height: 40px;
@@ -144,7 +114,6 @@ body {
   animation: ringSpin 6s linear infinite;
 }
 
-/* STARS */
 .star {
   width: 6px;
   height: 6px;
@@ -158,55 +127,6 @@ body {
 .star.s2 { top: 30px; right: 10px; animation-delay: .5s; }
 .star.s3 { bottom: 20px; left: 50px; animation-delay: 1s; }
 
-/* =========================
-   TOPICS
-========================= */
-.topics {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 18px;
-}
-
-/* TOPIC CARD */
-.topic-card {
-  background: #020617;
-  border: 1px solid #1e293b;
-  padding: 18px;
-  border-radius: 14px;
-  cursor: pointer;
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.topic-card.animate {
-  animation: cardIn 0.6s ease forwards;
-}
-
-.topic-card:hover {
-  border-color: #facc15;
-  box-shadow: 0 0 15px rgba(250,204,21,0.4);
-}
-
-.topic-card h4 {
-  color: #facc15;
-}
-
-.topic-card p {
-  display: none;
-  margin-top: 10px;
-  font-size: 14px;
-  color: #cbd5f5;
-  line-height: 1.6;
-}
-
-.topic-card.active p {
-  display: block;
-  animation: defFade 0.3s ease;
-}
-
-/* =========================
-   ANIMATIONS
-========================= */
 @keyframes floatCartoon {
   0%,100% { transform: translateY(0); }
   50% { transform: translateY(-14px); }
@@ -246,11 +166,8 @@ body {
   50% { box-shadow: 0 0 16px rgba(250,204,21,0.6); }
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+
 @media (max-width: 768px) {
   .layout { flex-direction: column; }
   .sidebar { width: 100%; border-right: none; }
-  .topics { grid-template-columns: 1fr; }
 }

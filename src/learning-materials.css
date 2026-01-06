@@ -1,0 +1,141 @@
+:root {
+  --bg: #020617;
+  --card-bg: #020617;
+  --border: #231d01;
+  --text: #9ea2a6;
+  --muted: #6b7280;
+  --accent: #facc15;
+  --success: #16a34a;
+}
+
+body.dark {
+  --bg: #0f172a;
+  --card-bg: #020617;
+  --border: #334155;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0;
+  align-items: center;
+}
+
+.controls input,
+.controls select {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 14px;
+}
+
+.quiz-btn {
+  margin-left: auto;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.quiz-btn:hover {
+  opacity: 0.9;
+}
+.topics {
+  margin-top: 10px;
+}
+
+.faq-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+
+/* Header */
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.faq-toggle {
+  font-size: 20px;
+  color: var(--muted);
+}
+
+.faq-content {
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--muted);
+  display: none;
+}
+
+.faq-content.open {
+  display: block;
+}
+
+.answer {
+  margin-bottom: 6px;
+}
+
+.answer span {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 28px 0;
+}
+
+.page-btn {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.page-btn.active {
+  background: var(--accent);
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+button{
+    padding-block: 10px;
+    padding-inline: 10px;
+    align-items: center;
+}
+
+.active{
+    background-color: var(--border);
+    color: var(--accent);
+}
+
+.button-container{
+    display: flex;
+    margin-inline: auto;
+    justify-content: center;
+}

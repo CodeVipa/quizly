@@ -19,6 +19,8 @@ function playWrong() {
     wrongSound.play();
 }
 
+const params = new URLSearchParams(window.location.search);
+const defaultCat = params.get("category");
 const profileBtn = document.getElementById("profileBtn");
 const profileMenu = document.getElementById("profileMenu");
 const authButtons = document.getElementById("authButtons");
@@ -49,6 +51,13 @@ document.addEventListener("DOMContentLoaded", () => {
         handleRetry(JSON.parse(retry));
     } else {
         document.getElementById("quizSettingsModal").classList.remove("hidden");
+        if (defaultCat) {
+            const select = document.querySelector("#quizSettingsForm select");
+            if (select) {
+                select.value = defaultCat;
+                // Optional: console.log(`Pre-selected category: ${defaultCat}`);
+            }
+        }
     }
 });
 
