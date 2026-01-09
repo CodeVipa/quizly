@@ -1,9 +1,18 @@
 import { isAuthenticated, requireAuth } from "./core/auth_guard";
 import { categoryFormatter, intervalFormatter, launchFireworks } from "./core/utils";
+import { clearSession } from "./core/storage";
 
 const excellent =new Audio("../sounds/excellent.mp3");
 const tried =new Audio("../sounds/tried.mp3");
 const failure =new Audio("../sounds/failure.mp3")
+
+
+const logoutButton = document.getElementById("logoutButton");
+
+logoutButton.addEventListener('click',()=>{
+    clearSession();
+    window.location.href = "login.html"
+})
 
 function playExcellent(){
     excellent.currentTime = 0;

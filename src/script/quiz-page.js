@@ -9,6 +9,13 @@ let user = null;
 const correctSound = new Audio("../sounds/success.mp3");
 const wrongSound = new Audio("../sounds/wrong.mp3");
 
+const logoutButton = document.getElementById("logoutButton");
+
+logoutButton.addEventListener('click',()=>{
+    clearSession();
+    window.location.href = "login.html"
+})
+
 function playCorrect() {
     correctSound.currentTime = 0;
     correctSound.play();

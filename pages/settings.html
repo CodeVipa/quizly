@@ -160,19 +160,16 @@
 
     <script>
     function showSection(sectionId) {
-        // 1. Hide all sections
         const sections = document.querySelectorAll('.content-section');
         sections.forEach(section => {
             section.classList.add('hidden');
         });
 
-        // 2. Show the selected section
         const target = document.getElementById('section-' + sectionId);
         if (target) {
             target.classList.remove('hidden');
         }
 
-        // 3. Update Nav Styling
         const links = ['profile', 'security', 'notifications'];
         links.forEach(id => {
             const link = document.getElementById('link-' + id);
@@ -187,11 +184,10 @@
             }
         });
     }
-    //log out the authenticated user
     function logoutUser(){
         localStorage.removeItem("authenticatedUser");
         console.log("logging out ...")
-        window.location.href="index.html"
+        window.location.href="login.html"
     }
     </script>
 </body>

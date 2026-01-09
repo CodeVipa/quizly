@@ -1,5 +1,7 @@
 import { requireAuth, isAuthenticated } from "./core/auth_guard";
 import { categoryFormatter, count, formatter, intervalFormatter } from "./core/utils";
+import { clearSession } from "./core/storage";
+
 
 const themeToggleBtn = document.getElementById("themeToggleBtn");
 const themeIcon = document.getElementById("themeIcon");
@@ -12,6 +14,14 @@ const profileMenu = document.getElementById("profileMenu");
 profileBtn.addEventListener("click", () => {
     profileMenu.classList.toggle("hidden");
 });
+
+const logoutButton = document.getElementById("logoutButton");
+
+logoutButton.addEventListener('click',()=>{
+    clearSession();
+    window.location.href = "login.html"
+})
+
 
 document.addEventListener("click", (e) => {
     if (!profileBtn.contains(e.target) && !profileMenu.contains(e.target)) {
