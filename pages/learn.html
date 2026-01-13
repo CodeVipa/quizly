@@ -26,11 +26,29 @@
 
   <main class="content">
 
-    <button id="backBtn" class="back-btn" onclick="goBack()">← Go Back</button>
+    <button id="backBtn" class="back-btn" onclick="goBack()" style="display:none">
+      ← Go Back
+    </button>
+
     <h1 id="title">Choose a learning module</h1>
 
+    <div id="dashboard" class="dashboard">
+      <div class="stat-card">
+        <h3>Total Questions</h3>
+        <p id="stat-total">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Questions Read</h3>
+        <p id="stat-read">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Completion</h3>
+        <p id="stat-percent">0%</p>
+      </div>
+    </div>
+
     <div id="intro" class="intro">
-      <p>Explore knowledge in a fun and interactive way</p>
+      <p>Track your learning progress and master topics step by step.</p>
     </div>
 
     <div id="controls" class="controls hidden">
@@ -48,10 +66,16 @@
         <option value="hard">Hard</option>
       </select>
 
-      <button class="quiz-btn" onclick="goToQuiz()">
-        Go to Quiz
-      </button>
+      <button class="quiz-btn" onclick="goToQuiz()">Go to Quiz</button>
     </div>
+
+    <div class="progress-container">
+      <div class="progress">
+        <div id="progress-bar"></div>
+      </div>
+      <small id="progress-text"></small>
+    </div>
+
     <div id="topics" class="topics"></div>
 
   </main>
